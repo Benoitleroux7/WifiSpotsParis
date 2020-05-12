@@ -1,0 +1,37 @@
+a {
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+.content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 15px;
+    border: none;
+}
+
+input {
+    display: inline-block;
+    float: left;
+    padding: 10px;
+}
+
+.bubbly-button {
+    margin: 40px;
+    text-align: center;
+}
