@@ -18,8 +18,8 @@
             </div> -->
                 <input type="text" name="mainNom" placeholder="Nom" id="mainNom" required><br>
                 <input type="text" name="mainPrenom" placeholder="Prénom" id="mainPrenom" required><br>
+                <input type="number" name="mainDistrict" placeholder="Arrondissement" id="mainDistrict" min="1" max="20" required><br>
                 <input type="text" name="mainEmail" placeholder="Adresse mail" id="mainEmail" required><br>
-                <input type="number" name="mainDistrict" placeholder="N° d'arrondissement" id="mainDistrict" min="1" max="20" required><br>
                 <input type="password" name="password" placeholder="Mot de passe" id="mdp" required><br>
                 <input type="password" name="pswVerify" placeholder="Confirmer le mot de passe" id="mdp2" required>
                 <p class="error"></p>

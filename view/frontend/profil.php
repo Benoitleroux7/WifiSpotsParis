@@ -14,8 +14,8 @@
         <div id="image-text">
             <label>Nom: </label><input type="text" name="nom" value="<?= $nomUser ?>"><br>
             <label>Prénom: </label><input type="text" name="prenom" value="<?= $prenomUser ?>"><br>
-            <label>Adresse mail: </label><input type="text" name="email" value="<?= $emailUser ?>"><br>
             <label>Arrondissement: </label><input type="number" name="district" min="1" max="20" value="<?= $arrondissementUser ?>"><br>
+            <label>Adresse mail: </label><input type="text" name="email" value="<?= $emailUser ?>"><br>
             <p id="idUser" hidden=true;><?= $_SESSION['idUser'] ?></p>
         </div>
 

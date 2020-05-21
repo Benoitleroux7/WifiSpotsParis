@@ -38,44 +38,18 @@ function createUser()
     //Creation d'un utilisateur puis connection au site
     if (!verifyUser(htmlspecialchars($_POST['email']), htmlspecialchars($_POST['password'])))
     {
-        addUser(htmlspecialchars($_POST['nom']), htmlspecialchars($_POST['prenom']), htmlspecialchars($_POST['email']), htmlspecialchars($_POST['district']), htmlspecialchars($_POST['password']));
+        addUser(htmlspecialchars($_POST['nom']), htmlspecialchars($_POST['prenom']), htmlspecialchars($_POST['district']), htmlspecialchars($_POST['email']), htmlspecialchars($_POST['password']));
     }
     else {
         throw new Exception("User already existing");
     }
 }
 
-// function createTotal() {
-//     $elt_utilisateur = explode(",", $_POST['input_utilisateur']);
-//     $i = 1;
-//     $temp = array();
-//     foreach ($elt_utilisateur as $elt) {
-//         $temp[] = $elt;
-//         $i ++;
-//         if ($i % 5 == 0) {
-//             addUser($temp[0], $temp[1], $temp[2], $temp[3]);
-//             $i = 1;
-//             $temp = array();
-//         }
-//         // echo nl2br ("\n");
-//     }
-//     $elt_capteur = explode(",", $_POST['input_capteur']);
-//     $i = 1;
-//     $temp = array();
-//     foreach ($elt_capteur as $elt) {
-//         $temp[] = $elt;
-//         $i ++;
-//         if ($i % 3 == 0) {
-//             addCapteur($temp[1], $temp[0]);
-//             $i = 1;
-//             $temp = array();
-//         }
-//         // echo nl2br ("\n");
-//     }
-// }
-
 function createTotal($infos) {
     $mainHouseUser = $infos['mainUser'];
+    
+    //Adding the main account
+    $idMainUser = addUser($mainHouseUser[0], $mainHouseUser[1], $mainHouseUser[2], $mainHouseUser[3], $mainHouseUser[4]);
 }
 
 function profil()
@@ -84,8 +58,8 @@ function profil()
     $user = getInfoUser($_SESSION['idUser']);
     $nomUser = $user['nom'];
     $prenomUser = $user['prenom'];
-    $emailUser = $user['email'];
     $arrondissementUser = $user['district'];
+    $emailUser = $user['email'];
     if ($user['image_profil'] == null) {
         $image = 'photo.svg';
     }
@@ -96,7 +70,7 @@ function profil()
 }
 
 function saveUser() {
-    setUser($_SESSION['idUser'], htmlspecialchars($_POST['nom']), htmlspecialchars($_POST['prenom']), htmlspecialchars($_POST['email']), htmlspecialchars($_POST['district']));
+    setUser($_SESSION['idUser'], htmlspecialchars($_POST['nom']), htmlspecialchars($_POST['prenom']), htmlspecialchars($_POST['district']), htmlspecialchars($_POST['email']));
 }
 
 function saveImage() {
@@ -140,8 +114,8 @@ function sendPassword($email, $password) {
 
     // Create the Transport
     $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465,'ssl'))
-    ->setUsername('DeltaDomusAPP@gmail.com')
-    ->setPassword('deltadomuspassword1');
+    ->setUsername('deltadomusapp@gmail.com')
+    ->setPassword('tvkjnhpftonkmqye');
 
 
     // Create the Mailer using your created Transport
@@ -149,7 +123,7 @@ function sendPassword($email, $password) {
 
     // Create a message
     $message = (new Swift_Message('Mot de passe oublié'))
-      ->setFrom(['DeltaDomusAPP@gmail.com' => 'DeltaDomus'])
+      ->setFrom(['deltadomusapp@gmail.com' => 'DeltaDomus'])
       ->setTo([$email])
       ->setBody($body, 'text/html')
       ;
@@ -167,11 +141,12 @@ function verifyPassword($id, $oldPassword, $newPassword) {
     header("Refresh:0; url=index.php?action=redirect&page=profil.php&updated=0");
   }
 }
+
 function sendMail($nom, $prenom, $email, $contenu) {
   // Create the Transport
   $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465,'ssl'))
-  ->setUsername('DeltaDomusAPP@gmail.com')
-  ->setPassword('deltadomuspassword1');
+  ->setUsername('deltadomusapp@gmail.com')
+  ->setPassword('tvkjnhpftonkmqye');
 
 
   // Create the Mailer using your created Transport
@@ -180,7 +155,7 @@ function sendMail($nom, $prenom, $email, $contenu) {
   // Create a message
   $message = (new Swift_Message('Nouveau message'))
     ->setFrom([$email => $nom." ".$prenom])
-    ->setTo(["DeltaDomusAPP@gmail.com"])
+    ->setTo(["deltadomusapp@gmail.com"])
     ->setBody($contenu, 'text/html')
     ;
 

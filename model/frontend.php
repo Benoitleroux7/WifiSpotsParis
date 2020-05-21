@@ -3,7 +3,7 @@
 function dbConnect()
 {
     //Connexion a la base de donnée
-    $db = new PDO('mysql:host=localhost;dbname=wifispotsparis;charset=utf8', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=wifispotsparis;charset=utf8;port=3308', 'root', '');
     return $db;
 }
 
@@ -33,29 +33,19 @@ function verifyMail($mail)
     return $id;
 }
 
-function isAdmin($idUser) {
-    $db = dbConnect();
-    $query = $db->prepare("SELECT admin FROM table_utilisateur WHERE ID = ?");
-    $query->execute(array($idUser));
-    $id = $query->fetch();
-    $query->closeCursor();
-
-    return $id[0];
-}
-
-function addUser($nom, $prenom, $email, $district, $password) {
+function addUser($nom, $prenom, $district, $email, $password) {
     //Ajout d'un utilisateur dans la base de donnée
     $db = dbConnect();
     if (verifyMail($email)) {
         return;
     }
 	$hash = hash("sha256", $password);
-    $adding = $db->prepare("INSERT INTO table_utilisateur(nom, prenom, email, district, password) VALUES(:nom, :prenom, :email, :district, :password)");
+    $adding = $db->prepare("INSERT INTO table_utilisateur(nom, prenom, district, email, password) VALUES(:nom, :prenom, :district, :email, :password)");
     $adding->execute(array(
         'nom' => $nom,
         'prenom' => $prenom,
-        'email' => $email,
         'district' => $district,
+        'email' => $email,
         'password' => $hash
     ));
 
@@ -69,28 +59,28 @@ function getInfoUser($idUser)
 {
     //Récupère les infos d'un utilisateur
     $db = dbConnect();
-    $query = $db->prepare("SELECT ID, nom, prenom, email, district, image_profil FROM table_utilisateur WHERE ID = ?");
+    $query = $db->prepare("SELECT ID, nom, prenom, district, email, image_profil FROM table_utilisateur WHERE ID = ?");
     $query->execute(array($idUser));
     $info = $query->fetch();
     $query->closeCursor();
 
-    //Return ID, nom, prenom, email,image_profil de l'utilisateur
+    //Return ID, nom, prenom, email, image_profil de l'utilisateur et son arrondissement
     return $info;
 }
 
-function setUser($idUser, $nom, $prenom, $email, $district) {
+function setUser($idUser, $nom, $prenom, $district, $email) {
     $db = dbConnect();
     $query = $db->prepare("UPDATE table_utilisateur
         SET nom = :nom,
         prenom = :prenom,
+        district = :district,
         email = :email
-        district = :district
         WHERE ID = :idUser");
     $query->execute(array(
         'nom' => $nom,
         'prenom' => $prenom,
-        'email' => $email,
         'district' => $district,
+        'email' => $email,
         'idUser' =>$idUser
     ));
 }

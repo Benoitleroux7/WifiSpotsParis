@@ -41,9 +41,9 @@ try
                 header("Refresh:0; url=index.php");
             }
             elseif ($_GET['action'] == 'saveUser') {
-                if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email'])) {
+                if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['district']) && isset($_POST['email'])) {
                     saveUser();
-                    header("Refresh:0; url=index.php?action=redirect&page=profil.php&updated");
+                    header("Refresh:0; url=index.php?action=redirect&page=profil.php&updated=1");
                 }
             }
             elseif ($_GET['action'] == 'saveImage') {
@@ -87,7 +87,7 @@ try
             }
 
             //Création de l'utilisateur
-            elseif ($_GET['action'] == 'signin' AND isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['email']) AND isset($_POST['district']) AND isset($_POST['password'])) {
+            elseif ($_GET['action'] == 'signin' AND isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['district']) AND isset($_POST['email']) AND isset($_POST['password'])) {
                 createUser();
                 login(htmlspecialchars($_POST['email']), htmlspecialchars($_POST['password']), false);
                 header("Refresh:0; url=index.php?action=redirect&page=accueil.php");
@@ -113,6 +113,10 @@ try
                 elseif ($_GET['page'] == 'reset-password.php') {
                     require('view/frontend/reset-password.php');
                 }
+                elseif ($_GET['page'] == 'testRest.php') {
+                    require('view/rest/testRest.php');
+                }
+
             }
 
             //Creation d'un utilisateur avec toutes les infos

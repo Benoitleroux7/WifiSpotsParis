@@ -9,8 +9,8 @@
     <div id="informations">
         <label>Nom: </label><input type="text" name="nom" placeholder="Nom"><br>
         <label>Prénom: </label><input type="text" name="prenom" placeholder="Prénom"><br>
+        <label>Arrondissement: </label><input type="number" name="district" placeholder="Arrondissement"><br>
         <label>Adresse mail: </label><input type="text" name="email" placeholder="Adresse mail"><br>
-        <label>Numéro d'arrondissement: </label><input type="number" name="district" placeholder="Arrondissement"><br>
         <label>Mot de passe: </label><input type="password" name="password" placeholder="Mot de passe"><br>
         <input class="bubbly-button" type="submit" name="submit" value="Créer un compte">
     </div>

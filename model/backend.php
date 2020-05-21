@@ -2,7 +2,7 @@
 
 function getUserArray() {
     $db = dbConnect();
-    $query = $db->prepare("SELECT ID, nom, prenom, email, district FROM table_utilisateur");
+    $query = $db->prepare("SELECT ID, nom, prenom, district, email FROM table_utilisateur");
     $query->execute();
 
     while ($user = $query->fetch()) {
