@@ -1,4 +1,58 @@
 <?php
+    $title = 'Webservice1';
+    $cssFile = 'style-webservice1.css';
+    $jsFile = '';
+?>
+
+<?php ob_start(); ?>
+
+<button type="submit" class="bubbly-button" id="district-button-1" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75001'?>>Spots wifi du 1er arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-2" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75002'?>>Spots wifi du 2ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-3" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75003'?>>Spots wifi du 3ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-4" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75004'?>>Spots wifi du 4ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-5" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75005'?>>Spots wifi du 5ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-6" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75006'?>>Spots wifi du 6ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-7" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75007'?>>Spots wifi du 7ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-8" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75008'?>>Spots wifi du 8ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-9" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75009'?>>Spots wifi du 9ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-10" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75010'?>>Spots wifi du 10ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-11" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75011'?>>Spots wifi du 11ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-12" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75012'?>>Spots wifi du 12ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-13" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75013'?>>Spots wifi du 13ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-14" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75014'?>>Spots wifi du 14ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-15" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75015'?>>Spots wifi du 15ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-16" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75016'?>>Spots wifi du 16ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-17" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75017'?>>Spots wifi du 17ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-18" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75018'?>>Spots wifi du 18ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-19" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75019'?>>Spots wifi du 19ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="district-button-20" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2&q=cp%3D75020'?>>Spots wifi du 20ème arrondissement</button>
+
+<button type="submit" class="bubbly-button" id="paris-button" onclick=<?php $url = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=sites-disposant-du-service-paris-wi-fi&q=&rows=300&facet=cp&facet=nom_site&facet=arc_adresse&facet=geo_point_2d&facet=etat2' ?>>Spots wifi de Paris</button>
+
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template.php'); ?>
+
+<?php
 
 // Headers requis
 header("Access-Control-Allow-Origin: *");
