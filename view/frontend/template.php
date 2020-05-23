@@ -34,7 +34,7 @@
             <?php if (isset($_SESSION['idUser'])) { ?>
                 <!-- Si l'utilisateur est connecté afficher ce menu -->
                 <li><a href="index.php?action=redirect&amp;page=profil.php">Mon profil</a></li>
-                <li><a href="index.php?action=redirect&amp;page=webservice1.php">Trouver les spots wifi</a></li>
+                <li><a href="index.php?action=redirect&amp;page=../rest/getDataDistrict16.php">Trouver les spots wifi</a></li>
                 <li><a href="index.php?action=redirect&amp;page=contact.php">Contact</a></li>
                 <li><a href="index.php?action=disconnect">Se déconnecter</a></li>
             <?php } else { ?>
